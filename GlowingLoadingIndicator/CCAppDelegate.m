@@ -7,6 +7,7 @@
 //
 
 #import "CCAppDelegate.h"
+#import "CCNewsListVC.h"
 
 @implementation CCAppDelegate
 
@@ -14,7 +15,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[CCNewsListVC alloc] initWithNibName:nil bundle:nil]];
+    navController.navigationBarHidden = YES;
+    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     return YES;
 }
